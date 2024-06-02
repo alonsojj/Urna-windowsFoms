@@ -13,14 +13,15 @@ namespace Urna
     {
 
         public static UIElements UserInterface { get; private set; }
+        private Timer timer;
 
 
         public Form1()
         {
             InitializeComponent();
             UserInterface = new UIElements();
-
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -31,7 +32,9 @@ namespace Urna
         {
             await Candidatos.DefinirCandidatosPadrao();
             InicializarControles();
+            UrnabntClass.InicializarBotoesDaUrna();
             InicializarControlesConfig();
+            Config.InicializarConfig();
         }
 
         private void InicializarControles()
@@ -48,26 +51,21 @@ namespace Urna
             label1, label2, label3, label4, label5, label6, label7
             };
             UserInterface.urnaPanel = new Label[] { textNome, textPt };
-            UrnabntClass.InicializarBotoesDaUrna();
+            
+            UserInterface.Ocultlabels = new Label[]
+            {
+                UrnaNome,UrnaPt,label13,textConfirma,LinhaUrna,UrnaSeuvoto,tituloUrna
+            };
         }
 
         private void InicializarControlesConfig()
         {
             UserInterface.TextConfig = new TextBox[] { textBoxNome, textBoxNumero, textBoxPartido, textBoxUrl };
             UserInterface.bntsConfig = new Button[] { button1, button2, Salvar };
-            Config.InicializarConfig();
+            
             UserInterface.Urnafoto = UrnaFt;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 
     public class UIElements
@@ -79,5 +77,7 @@ namespace Urna
         public Button[] bntsConfig { get; set; }
         public  TextBox[] TextConfig { get; set; }
         public PictureBox Urnafoto { get; set; }
+
+        public  Label[] Ocultlabels { get; set; }
     }
 }

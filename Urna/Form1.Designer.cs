@@ -68,12 +68,11 @@ namespace Urna
             pictureBox27 = new PictureBox();
             inputN = new Label();
             label10 = new Label();
-            label12 = new Label();
+            UrnaSeuvoto = new Label();
             label13 = new Label();
-            pictureBox28 = new PictureBox();
             textConfirma = new Label();
             UrnaFt = new PictureBox();
-            label15 = new Label();
+            tituloUrna = new Label();
             label16 = new Label();
             UrnaNome = new Label();
             textNome = new Label();
@@ -84,8 +83,8 @@ namespace Urna
             bntMain = new Button();
             bntResult = new Button();
             panel2 = new Panel();
+            LinhaUrna = new Label();
             pictureBox9 = new PictureBox();
-            pictureBox1 = new PictureBox();
             panel3 = new Panel();
             panel4 = new Panel();
             label18 = new Label();
@@ -101,6 +100,7 @@ namespace Urna
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)UrnaCorrige).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UrnaN4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UrnaN3).BeginInit();
@@ -127,12 +127,10 @@ namespace Urna
             ((System.ComponentModel.ISupportInitialize)pictureBox25).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox26).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox27).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox28).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UrnaFt).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
@@ -279,7 +277,7 @@ namespace Urna
             // UrnaBranco
             // 
             UrnaBranco.Image = (System.Drawing.Image)resources.GetObject("UrnaBranco.Image");
-            UrnaBranco.Location = new System.Drawing.Point(671, 325);
+            UrnaBranco.Location = new System.Drawing.Point(674, 325);
             UrnaBranco.Name = "UrnaBranco";
             UrnaBranco.Size = new System.Drawing.Size(90, 59);
             UrnaBranco.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -289,7 +287,7 @@ namespace Urna
             // UrnaConfirma
             // 
             UrnaConfirma.Image = (System.Drawing.Image)resources.GetObject("UrnaConfirma.Image");
-            UrnaConfirma.Location = new System.Drawing.Point(850, 314);
+            UrnaConfirma.Location = new System.Drawing.Point(848, 313);
             UrnaConfirma.Name = "UrnaConfirma";
             UrnaConfirma.Size = new System.Drawing.Size(94, 70);
             UrnaConfirma.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -449,7 +447,7 @@ namespace Urna
             // pictureBox25
             // 
             pictureBox25.Image = (System.Drawing.Image)resources.GetObject("pictureBox25.Image");
-            pictureBox25.Location = new System.Drawing.Point(659, 99);
+            pictureBox25.Location = new System.Drawing.Point(659, 100);
             pictureBox25.Name = "pictureBox25";
             pictureBox25.Size = new System.Drawing.Size(285, 285);
             pictureBox25.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -478,55 +476,51 @@ namespace Urna
             // 
             // inputN
             // 
-            inputN.AutoSize = true;
+            inputN.Anchor = AnchorStyles.None;
             inputN.BackColor = System.Drawing.Color.Transparent;
-            inputN.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            inputN.Location = new System.Drawing.Point(128, 130);
+            inputN.BorderStyle = BorderStyle.FixedSingle;
+            inputN.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            inputN.Location = new System.Drawing.Point(139, 132);
             inputN.Name = "inputN";
-            inputN.Size = new System.Drawing.Size(0, 47);
+            inputN.RightToLeft = RightToLeft.Yes;
+            inputN.Size = new System.Drawing.Size(32, 36);
             inputN.TabIndex = 58;
+            inputN.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Arial", 21.21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label10.Location = new System.Drawing.Point(224, 87);
+            label10.Location = new System.Drawing.Point(205, 76);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(154, 33);
             label10.TabIndex = 59;
             label10.Text = "Presidente";
             // 
-            // label12
+            // UrnaSeuvoto
             // 
-            label12.AutoSize = true;
-            label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label12.Location = new System.Drawing.Point(35, 53);
-            label12.Margin = new Padding(2, 0, 2, 0);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(174, 24);
-            label12.TabIndex = 61;
-            label12.Text = "SEU VOTO PARA";
+            UrnaSeuvoto.AutoSize = true;
+            UrnaSeuvoto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            UrnaSeuvoto.Location = new System.Drawing.Point(35, 57);
+            UrnaSeuvoto.Margin = new Padding(2, 0, 2, 0);
+            UrnaSeuvoto.Name = "UrnaSeuvoto";
+            UrnaSeuvoto.Size = new System.Drawing.Size(136, 18);
+            UrnaSeuvoto.TabIndex = 61;
+            UrnaSeuvoto.Text = "SEU VOTO PARA";
+            UrnaSeuvoto.Visible = false;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label13.Location = new System.Drawing.Point(35, 142);
+            label13.Location = new System.Drawing.Point(40, 139);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(88, 24);
             label13.TabIndex = 62;
             label13.Text = "Número:";
-            // 
-            // pictureBox28
-            // 
-            pictureBox28.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            pictureBox28.Location = new System.Drawing.Point(30, 297);
-            pictureBox28.Name = "pictureBox28";
-            pictureBox28.Size = new System.Drawing.Size(595, 2);
-            pictureBox28.TabIndex = 63;
-            pictureBox28.TabStop = false;
+            label13.Visible = false;
             // 
             // textConfirma
             // 
@@ -537,24 +531,29 @@ namespace Urna
             textConfirma.Size = new System.Drawing.Size(234, 45);
             textConfirma.TabIndex = 64;
             textConfirma.Text = "Aperte a tecla:\r\n     CONFIRMA para CONFIRMAR este voto \r\n          CORRIGE para REINICIAR este voto\r\n";
+            textConfirma.Visible = false;
             // 
             // UrnaFt
             // 
-            UrnaFt.Location = new System.Drawing.Point(529, 75);
+            UrnaFt.BorderStyle = BorderStyle.FixedSingle;
+            UrnaFt.Location = new System.Drawing.Point(496, 75);
             UrnaFt.Name = "UrnaFt";
-            UrnaFt.Size = new System.Drawing.Size(92, 111);
+            UrnaFt.Size = new System.Drawing.Size(102, 124);
+            UrnaFt.SizeMode = PictureBoxSizeMode.StretchImage;
             UrnaFt.TabIndex = 65;
             UrnaFt.TabStop = false;
+            UrnaFt.Visible = false;
             // 
-            // label15
+            // tituloUrna
             // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(544, 202);
-            label15.Margin = new Padding(2, 0, 2, 0);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(62, 15);
-            label15.TabIndex = 66;
-            label15.Text = "Presidente";
+            tituloUrna.AutoSize = true;
+            tituloUrna.Location = new System.Drawing.Point(517, 202);
+            tituloUrna.Margin = new Padding(2, 0, 2, 0);
+            tituloUrna.Name = "tituloUrna";
+            tituloUrna.Size = new System.Drawing.Size(62, 15);
+            tituloUrna.TabIndex = 66;
+            tituloUrna.Text = "Presidente";
+            tituloUrna.Visible = false;
             // 
             // label16
             // 
@@ -575,6 +574,7 @@ namespace Urna
             UrnaNome.Size = new System.Drawing.Size(67, 25);
             UrnaNome.TabIndex = 68;
             UrnaNome.Text = "Nome:";
+            UrnaNome.Visible = false;
             // 
             // textNome
             // 
@@ -604,6 +604,7 @@ namespace Urna
             UrnaPt.Size = new System.Drawing.Size(76, 25);
             UrnaPt.TabIndex = 70;
             UrnaPt.Text = "Partido:";
+            UrnaPt.Visible = false;
             // 
             // panel1
             // 
@@ -651,10 +652,10 @@ namespace Urna
             // 
             // panel2
             // 
+            panel2.Controls.Add(LinhaUrna);
             panel2.Controls.Add(inputN);
             panel2.Controls.Add(pictureBox9);
             panel2.Controls.Add(pictureBox27);
-            panel2.Controls.Add(pictureBox28);
             panel2.Controls.Add(textPt);
             panel2.Controls.Add(UrnaPt);
             panel2.Controls.Add(textNome);
@@ -663,7 +664,7 @@ namespace Urna
             panel2.Controls.Add(UrnaN4);
             panel2.Controls.Add(label16);
             panel2.Controls.Add(UrnaN3);
-            panel2.Controls.Add(label15);
+            panel2.Controls.Add(tituloUrna);
             panel2.Controls.Add(UrnaN2);
             panel2.Controls.Add(UrnaFt);
             panel2.Controls.Add(UrnaN1);
@@ -671,7 +672,7 @@ namespace Urna
             panel2.Controls.Add(UrnaN0);
             panel2.Controls.Add(label13);
             panel2.Controls.Add(UrnaBranco);
-            panel2.Controls.Add(label12);
+            panel2.Controls.Add(UrnaSeuvoto);
             panel2.Controls.Add(pictureBox10);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(pictureBox11);
@@ -685,17 +686,30 @@ namespace Urna
             panel2.Controls.Add(UrnaN5);
             panel2.Controls.Add(pictureBox22);
             panel2.Controls.Add(pictureBox17);
-            panel2.Controls.Add(pictureBox21);
             panel2.Controls.Add(pictureBox18);
             panel2.Controls.Add(UrnaConfirma);
             panel2.Controls.Add(pictureBox19);
-            panel2.Controls.Add(pictureBox25);
             panel2.Controls.Add(pictureBox20);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(pictureBox25);
+            panel2.Controls.Add(pictureBox21);
             panel2.Location = new System.Drawing.Point(1, 83);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(986, 434);
             panel2.TabIndex = 73;
+            // 
+            // LinhaUrna
+            // 
+            LinhaUrna.Anchor = AnchorStyles.None;
+            LinhaUrna.BackColor = System.Drawing.Color.Black;
+            LinhaUrna.BorderStyle = BorderStyle.FixedSingle;
+            LinhaUrna.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            LinhaUrna.Location = new System.Drawing.Point(30, 292);
+            LinhaUrna.Name = "LinhaUrna";
+            LinhaUrna.RightToLeft = RightToLeft.Yes;
+            LinhaUrna.Size = new System.Drawing.Size(597, 3);
+            LinhaUrna.TabIndex = 73;
+            LinhaUrna.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            LinhaUrna.Visible = false;
             // 
             // pictureBox9
             // 
@@ -706,16 +720,6 @@ namespace Urna
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox9.TabIndex = 72;
             pictureBox9.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new System.Drawing.Point(124, 125);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(47, 61);
-            pictureBox1.TabIndex = 73;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel3
             // 
@@ -728,7 +732,7 @@ namespace Urna
             panel3.Controls.Add(label1);
             panel3.Location = new System.Drawing.Point(1017, 83);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(146, 166);
+            panel3.Size = new System.Drawing.Size(409, 166);
             panel3.TabIndex = 74;
             // 
             // panel4
@@ -903,13 +907,11 @@ namespace Urna
             ((System.ComponentModel.ISupportInitialize)pictureBox25).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox26).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox27).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox28).EndInit();
             ((System.ComponentModel.ISupportInitialize)UrnaFt).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
@@ -955,12 +957,11 @@ namespace Urna
         private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.Label inputN;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label UrnaSeuvoto;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox28;
         private System.Windows.Forms.Label textConfirma;
         private System.Windows.Forms.PictureBox UrnaFt;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label tituloUrna;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label UrnaNome;
         private System.Windows.Forms.Label textNome;
@@ -974,7 +975,6 @@ namespace Urna
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Button button3;
         private Button button2;
         private Button button1;
@@ -988,6 +988,9 @@ namespace Urna
         private Label label18;
         private Label label17;
         private TextBox textBoxNumero;
+        private Label label19;
+        private Label LinhaUrna;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

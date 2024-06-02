@@ -21,7 +21,69 @@ namespace Urna
     public static class Candidatos
     {
         public static List<Candidato> ListaCandidatos { get; set; } = new List<Candidato>();
+        public static async Task DefinirCandidatosPadrao()
+        {
+            await Task.Run(() =>
+            {
+                Candidato[] candidatos = new Candidato[]
+               {
+                new Candidato {
+                    Numero = 0,
+                    Nome = "Nulo",
+                    Partido = "Zero",
+                    Imagem = "",
+                    QuantidadeVotos = 0
+                },
+                new Candidato {
+                    Numero = -1,
+                    Nome = "Branco",
+                    Partido = "Branco",
+                    Imagem = "C:\\Users\\cleod\\Downloads\\Urna\\img\\Candidatos\\",
+                    QuantidadeVotos = 0 },
+                new Candidato {
+                    Numero = 1,
+                    Nome = "Chaves",
+                    Partido = "PSL",
+                    Imagem = "C:\\Users\\cleod\\Downloads\\Urna\\img\\Candidatos\\chaves.jpg",
+                    QuantidadeVotos = 0
+                },
+                new Candidato {
+                    Numero = 2,
+                    Nome = "Barriga",
+                    Partido = "PT",
+                    Imagem = "C:\\Users\\cleod\\Downloads\\Urna\\img\\Candidatos\\barriga.jpg",
+                    QuantidadeVotos = 0
+                },
+                new Candidato {
+                    Numero = 3,
+                    Nome = "Florinda",
+                    Partido = "PSOL",
+                    Imagem = "C:\\Users\\cleod\\Downloads\\Urna\\img\\Candidatos\\florinda.jpg",
+                    QuantidadeVotos = 0
+                },
+                new Candidato {
+                    Numero = 4,
+                    Nome = "Kiko",
+                    Partido = "Podemos",
+                    Imagem = "C:\\Users\\cleod\\Downloads\\Urna\\img\\Candidatos\\kiko.jpg",
+                    QuantidadeVotos = 0
+                },
+                new Candidato {
+                    Numero = 5,
+                    Nome = "Chiquinha",
+                    Partido = "MDB",
+                    Imagem = "C:\\Users\\cleod\\Downloads\\Urna\\img\\Candidatos\\Chiquinha.jpg",
+                    QuantidadeVotos = 0
+                }
+               };
 
+                foreach (Candidato candidato in candidatos)
+                {
+                    Candidatos.AdicionarCandidato(candidato);
+                }
+            });
+
+        }
         public static void AdicionarCandidato(Candidato candidato)
         {
             ListaCandidatos.Add(candidato);
@@ -60,69 +122,7 @@ namespace Urna
              
             }
         }
-        public static async Task DefinirCandidatosPadrao()
-        {
-            await Task.Run(() =>
-            {
-                Candidato[] candidatos = new Candidato[]
-               {
-                new Candidato {
-                    Numero = 0,
-                    Nome = "Nulo",
-                    Partido = "Zero",
-                    Imagem = "",
-                    QuantidadeVotos = 0
-                },
-                new Candidato {
-                    Numero = -1,
-                    Nome = "Branco",
-                    Partido = "Branco",
-                    Imagem = "",
-                    QuantidadeVotos = 0 },
-                new Candidato {
-                    Numero = 1,
-                    Nome = "Chaves",
-                    Partido = "PSL",
-                    Imagem = "",
-                    QuantidadeVotos = 0
-                },
-                new Candidato {
-                    Numero = 2,
-                    Nome = "Barriga",
-                    Partido = "PT",
-                    Imagem = "",
-                    QuantidadeVotos = 0
-                },
-                new Candidato {
-                    Numero = 3,
-                    Nome = "Florinda",
-                    Partido = "PSOL",
-                    Imagem = "",
-                    QuantidadeVotos = 0
-                },
-                new Candidato {
-                    Numero = 4,
-                    Nome = "Kiko",
-                    Partido = "Podemos",
-                    Imagem = "C:\\Users\\cleod\\Downloads\\WhatsApp Image 2024-04-28 at 22.41.59 (2).jpeg",
-                    QuantidadeVotos = 0
-                },
-                new Candidato {
-                    Numero = 5,
-                    Nome = "Chiquinha",
-                    Partido = "MDB",
-                    Imagem = "",
-                    QuantidadeVotos = 0
-                }
-               };
 
-                foreach (Candidato candidato in candidatos)
-                {
-                    Candidatos.AdicionarCandidato(candidato);
-                }
-            });
-            
-        }
 
 
 
