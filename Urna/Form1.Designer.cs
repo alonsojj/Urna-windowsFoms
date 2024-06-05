@@ -32,13 +32,10 @@ namespace Urna
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            label2 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label1 = new Label();
+            voto5 = new Label();
+            voto4 = new Label();
+            voto3 = new Label();
+            voto2 = new Label();
             label8 = new Label();
             UrnaCorrige = new PictureBox();
             UrnaN4 = new PictureBox();
@@ -83,9 +80,38 @@ namespace Urna
             bntMain = new Button();
             bntResult = new Button();
             panel2 = new Panel();
+            panel5 = new Panel();
             LinhaUrna = new Label();
             pictureBox9 = new PictureBox();
+            pictureBox1 = new PictureBox();
             panel3 = new Panel();
+            progressBar0 = new ProgressBar();
+            progressBar00 = new ProgressBar();
+            votoNulo = new Label();
+            votoBranco = new Label();
+            votosBrancos = new Label();
+            votosNulos = new Label();
+            progressBar1 = new ProgressBar();
+            porcentagem5 = new Label();
+            resultadosFotos1 = new PictureBox();
+            nome1 = new Label();
+            progressBar2 = new ProgressBar();
+            porcentagem1 = new Label();
+            progressBar5 = new ProgressBar();
+            voto1 = new Label();
+            progressBar4 = new ProgressBar();
+            progressBar3 = new ProgressBar();
+            resultadosFotos2 = new PictureBox();
+            resultadosFotos3 = new PictureBox();
+            resultadosFotos4 = new PictureBox();
+            resultadosFotos5 = new PictureBox();
+            porcentagem2 = new Label();
+            porcentagem4 = new Label();
+            nome5 = new Label();
+            nome4 = new Label();
+            porcentagem3 = new Label();
+            nome3 = new Label();
+            nome2 = new Label();
             panel4 = new Panel();
             label18 = new Label();
             label17 = new Label();
@@ -97,10 +123,8 @@ namespace Urna
             textBoxPartido = new TextBox();
             textBoxNome = new TextBox();
             Salvar = new Button();
-            button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)UrnaCorrige).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UrnaN4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UrnaN3).BeginInit();
@@ -130,80 +154,57 @@ namespace Urna
             ((System.ComponentModel.ISupportInitialize)UrnaFt).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos5).BeginInit();
             panel4.SuspendLayout();
             SuspendLayout();
             // 
-            // label2
+            // voto5
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(31, 45);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(38, 15);
-            label2.TabIndex = 28;
-            label2.Text = "label2";
+            voto5.AutoSize = true;
+            voto5.Location = new System.Drawing.Point(437, 629);
+            voto5.Margin = new Padding(2, 0, 2, 0);
+            voto5.Name = "voto5";
+            voto5.Size = new System.Drawing.Size(38, 15);
+            voto5.TabIndex = 27;
+            voto5.Text = "label7";
             // 
-            // label7
+            // voto4
             // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(31, 120);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(38, 15);
-            label7.TabIndex = 27;
-            label7.Text = "label7";
+            voto4.AutoSize = true;
+            voto4.Location = new System.Drawing.Point(437, 466);
+            voto4.Margin = new Padding(2, 0, 2, 0);
+            voto4.Name = "voto4";
+            voto4.Size = new System.Drawing.Size(38, 15);
+            voto4.TabIndex = 26;
+            voto4.Text = "label6";
             // 
-            // label6
+            // voto3
             // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(31, 105);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(38, 15);
-            label6.TabIndex = 26;
-            label6.Text = "label6";
+            voto3.AutoSize = true;
+            voto3.Location = new System.Drawing.Point(437, 331);
+            voto3.Margin = new Padding(2, 0, 2, 0);
+            voto3.Name = "voto3";
+            voto3.Size = new System.Drawing.Size(38, 15);
+            voto3.TabIndex = 24;
+            voto3.Text = "label4";
             // 
-            // label5
+            // voto2
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(31, 90);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(38, 15);
-            label5.TabIndex = 25;
-            label5.Text = "label5";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(31, 75);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(38, 15);
-            label4.TabIndex = 24;
-            label4.Text = "label4";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(31, 60);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(38, 15);
-            label3.TabIndex = 23;
-            label3.Text = "label3";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(31, 30);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(38, 15);
-            label1.TabIndex = 22;
-            label1.Text = "label1";
+            voto2.AutoSize = true;
+            voto2.Location = new System.Drawing.Point(437, 186);
+            voto2.Margin = new Padding(2, 0, 2, 0);
+            voto2.Name = "voto2";
+            voto2.Size = new System.Drawing.Size(38, 15);
+            voto2.TabIndex = 23;
+            voto2.Text = "label3";
             // 
             // label8
             // 
@@ -480,7 +481,7 @@ namespace Urna
             inputN.BackColor = System.Drawing.Color.Transparent;
             inputN.BorderStyle = BorderStyle.FixedSingle;
             inputN.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            inputN.Location = new System.Drawing.Point(139, 132);
+            inputN.Location = new System.Drawing.Point(123, 83);
             inputN.Name = "inputN";
             inputN.RightToLeft = RightToLeft.Yes;
             inputN.Size = new System.Drawing.Size(32, 36);
@@ -491,7 +492,7 @@ namespace Urna
             // 
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Arial", 21.21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label10.Location = new System.Drawing.Point(205, 76);
+            label10.Location = new System.Drawing.Point(189, 27);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(154, 33);
@@ -502,7 +503,7 @@ namespace Urna
             // 
             UrnaSeuvoto.AutoSize = true;
             UrnaSeuvoto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            UrnaSeuvoto.Location = new System.Drawing.Point(35, 57);
+            UrnaSeuvoto.Location = new System.Drawing.Point(19, 8);
             UrnaSeuvoto.Margin = new Padding(2, 0, 2, 0);
             UrnaSeuvoto.Name = "UrnaSeuvoto";
             UrnaSeuvoto.Size = new System.Drawing.Size(136, 18);
@@ -514,7 +515,7 @@ namespace Urna
             // 
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label13.Location = new System.Drawing.Point(40, 139);
+            label13.Location = new System.Drawing.Point(24, 90);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(88, 24);
@@ -525,7 +526,7 @@ namespace Urna
             // textConfirma
             // 
             textConfirma.AutoSize = true;
-            textConfirma.Location = new System.Drawing.Point(30, 300);
+            textConfirma.Location = new System.Drawing.Point(14, 251);
             textConfirma.Margin = new Padding(2, 0, 2, 0);
             textConfirma.Name = "textConfirma";
             textConfirma.Size = new System.Drawing.Size(234, 45);
@@ -536,7 +537,7 @@ namespace Urna
             // UrnaFt
             // 
             UrnaFt.BorderStyle = BorderStyle.FixedSingle;
-            UrnaFt.Location = new System.Drawing.Point(496, 75);
+            UrnaFt.Location = new System.Drawing.Point(475, 27);
             UrnaFt.Name = "UrnaFt";
             UrnaFt.Size = new System.Drawing.Size(102, 124);
             UrnaFt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -547,7 +548,7 @@ namespace Urna
             // tituloUrna
             // 
             tituloUrna.AutoSize = true;
-            tituloUrna.Location = new System.Drawing.Point(517, 202);
+            tituloUrna.Location = new System.Drawing.Point(501, 153);
             tituloUrna.Margin = new Padding(2, 0, 2, 0);
             tituloUrna.Name = "tituloUrna";
             tituloUrna.Size = new System.Drawing.Size(62, 15);
@@ -558,7 +559,7 @@ namespace Urna
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new System.Drawing.Point(46, 222);
+            label16.Location = new System.Drawing.Point(30, 173);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
             label16.Size = new System.Drawing.Size(0, 15);
@@ -568,7 +569,7 @@ namespace Urna
             // 
             UrnaNome.AutoSize = true;
             UrnaNome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            UrnaNome.Location = new System.Drawing.Point(35, 192);
+            UrnaNome.Location = new System.Drawing.Point(19, 143);
             UrnaNome.Margin = new Padding(2, 0, 2, 0);
             UrnaNome.Name = "UrnaNome";
             UrnaNome.Size = new System.Drawing.Size(67, 25);
@@ -579,7 +580,7 @@ namespace Urna
             // textNome
             // 
             textNome.AutoSize = true;
-            textNome.Location = new System.Drawing.Point(128, 200);
+            textNome.Location = new System.Drawing.Point(112, 151);
             textNome.Margin = new Padding(2, 0, 2, 0);
             textNome.Name = "textNome";
             textNome.Size = new System.Drawing.Size(0, 15);
@@ -588,7 +589,7 @@ namespace Urna
             // textPt
             // 
             textPt.AutoSize = true;
-            textPt.Location = new System.Drawing.Point(128, 246);
+            textPt.Location = new System.Drawing.Point(112, 197);
             textPt.Margin = new Padding(2, 0, 2, 0);
             textPt.Name = "textPt";
             textPt.Size = new System.Drawing.Size(0, 15);
@@ -598,7 +599,7 @@ namespace Urna
             // 
             UrnaPt.AutoSize = true;
             UrnaPt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            UrnaPt.Location = new System.Drawing.Point(35, 240);
+            UrnaPt.Location = new System.Drawing.Point(19, 191);
             UrnaPt.Margin = new Padding(2, 0, 2, 0);
             UrnaPt.Name = "UrnaPt";
             UrnaPt.Size = new System.Drawing.Size(76, 25);
@@ -627,6 +628,7 @@ namespace Urna
             bntConfig.TabIndex = 2;
             bntConfig.Text = "Configurações";
             bntConfig.UseVisualStyleBackColor = true;
+            bntConfig.Click += bntConfig_Click;
             // 
             // bntMain
             // 
@@ -638,6 +640,7 @@ namespace Urna
             bntMain.TabIndex = 1;
             bntMain.Text = "Urna";
             bntMain.UseVisualStyleBackColor = true;
+            bntMain.Click += bntMain_Click;
             // 
             // bntResult
             // 
@@ -649,32 +652,21 @@ namespace Urna
             bntResult.TabIndex = 1;
             bntResult.Text = "Resultados";
             bntResult.UseVisualStyleBackColor = true;
+            bntResult.Click += bntResult_Click;
             // 
             // panel2
             // 
-            panel2.Controls.Add(LinhaUrna);
-            panel2.Controls.Add(inputN);
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(pictureBox9);
             panel2.Controls.Add(pictureBox27);
-            panel2.Controls.Add(textPt);
-            panel2.Controls.Add(UrnaPt);
-            panel2.Controls.Add(textNome);
             panel2.Controls.Add(UrnaCorrige);
-            panel2.Controls.Add(UrnaNome);
             panel2.Controls.Add(UrnaN4);
-            panel2.Controls.Add(label16);
             panel2.Controls.Add(UrnaN3);
-            panel2.Controls.Add(tituloUrna);
             panel2.Controls.Add(UrnaN2);
-            panel2.Controls.Add(UrnaFt);
             panel2.Controls.Add(UrnaN1);
-            panel2.Controls.Add(textConfirma);
             panel2.Controls.Add(UrnaN0);
-            panel2.Controls.Add(label13);
             panel2.Controls.Add(UrnaBranco);
-            panel2.Controls.Add(UrnaSeuvoto);
             panel2.Controls.Add(pictureBox10);
-            panel2.Controls.Add(label10);
             panel2.Controls.Add(pictureBox11);
             panel2.Controls.Add(UrnaN8);
             panel2.Controls.Add(UrnaN9);
@@ -697,13 +689,34 @@ namespace Urna
             panel2.Size = new System.Drawing.Size(986, 434);
             panel2.TabIndex = 73;
             // 
+            // panel5
+            // 
+            panel5.BackColor = System.Drawing.SystemColors.Control;
+            panel5.Controls.Add(textConfirma);
+            panel5.Controls.Add(LinhaUrna);
+            panel5.Controls.Add(label10);
+            panel5.Controls.Add(inputN);
+            panel5.Controls.Add(UrnaSeuvoto);
+            panel5.Controls.Add(label13);
+            panel5.Controls.Add(UrnaFt);
+            panel5.Controls.Add(textPt);
+            panel5.Controls.Add(tituloUrna);
+            panel5.Controls.Add(UrnaPt);
+            panel5.Controls.Add(label16);
+            panel5.Controls.Add(textNome);
+            panel5.Controls.Add(UrnaNome);
+            panel5.Location = new System.Drawing.Point(27, 41);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(600, 321);
+            panel5.TabIndex = 56;
+            // 
             // LinhaUrna
             // 
             LinhaUrna.Anchor = AnchorStyles.None;
             LinhaUrna.BackColor = System.Drawing.Color.Black;
             LinhaUrna.BorderStyle = BorderStyle.FixedSingle;
             LinhaUrna.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            LinhaUrna.Location = new System.Drawing.Point(30, 292);
+            LinhaUrna.Location = new System.Drawing.Point(14, 243);
             LinhaUrna.Name = "LinhaUrna";
             LinhaUrna.RightToLeft = RightToLeft.Yes;
             LinhaUrna.Size = new System.Drawing.Size(597, 3);
@@ -721,19 +734,305 @@ namespace Urna
             pictureBox9.TabIndex = 72;
             pictureBox9.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new System.Drawing.Point(689, 64);
+            pictureBox1.MaximumSize = new System.Drawing.Size(181, 143);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(102, 123);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 32;
+            pictureBox1.TabStop = false;
+            // 
             // panel3
             // 
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(label1);
-            panel3.Location = new System.Drawing.Point(1017, 83);
+            panel3.AutoScroll = true;
+            panel3.Controls.Add(progressBar0);
+            panel3.Controls.Add(progressBar00);
+            panel3.Controls.Add(votoNulo);
+            panel3.Controls.Add(votoBranco);
+            panel3.Controls.Add(votosBrancos);
+            panel3.Controls.Add(votosNulos);
+            panel3.Controls.Add(progressBar1);
+            panel3.Controls.Add(porcentagem5);
+            panel3.Controls.Add(resultadosFotos1);
+            panel3.Controls.Add(nome1);
+            panel3.Controls.Add(progressBar2);
+            panel3.Controls.Add(porcentagem1);
+            panel3.Controls.Add(progressBar5);
+            panel3.Controls.Add(voto1);
+            panel3.Controls.Add(progressBar4);
+            panel3.Controls.Add(progressBar3);
+            panel3.Controls.Add(resultadosFotos2);
+            panel3.Controls.Add(resultadosFotos3);
+            panel3.Controls.Add(resultadosFotos4);
+            panel3.Controls.Add(resultadosFotos5);
+            panel3.Controls.Add(porcentagem2);
+            panel3.Controls.Add(porcentagem4);
+            panel3.Controls.Add(nome5);
+            panel3.Controls.Add(nome4);
+            panel3.Controls.Add(porcentagem3);
+            panel3.Controls.Add(nome3);
+            panel3.Controls.Add(nome2);
+            panel3.Controls.Add(voto5);
+            panel3.Controls.Add(voto4);
+            panel3.Controls.Add(voto3);
+            panel3.Controls.Add(voto2);
+            panel3.Location = new System.Drawing.Point(4, 83);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(409, 166);
+            panel3.Size = new System.Drawing.Size(1001, 453);
             panel3.TabIndex = 74;
+            panel3.Visible = false;
+            // 
+            // progressBar0
+            // 
+            progressBar0.Location = new System.Drawing.Point(535, 76);
+            progressBar0.Name = "progressBar0";
+            progressBar0.Size = new System.Drawing.Size(284, 20);
+            progressBar0.TabIndex = 61;
+            // 
+            // progressBar00
+            // 
+            progressBar00.Location = new System.Drawing.Point(535, 186);
+            progressBar00.Name = "progressBar00";
+            progressBar00.Size = new System.Drawing.Size(284, 20);
+            progressBar00.TabIndex = 60;
+            // 
+            // votoNulo
+            // 
+            votoNulo.AutoSize = true;
+            votoNulo.Location = new System.Drawing.Point(621, 152);
+            votoNulo.Margin = new Padding(2, 0, 2, 0);
+            votoNulo.Name = "votoNulo";
+            votoNulo.Size = new System.Drawing.Size(38, 15);
+            votoNulo.TabIndex = 59;
+            votoNulo.Text = "label1";
+            // 
+            // votoBranco
+            // 
+            votoBranco.AutoSize = true;
+            votoBranco.Location = new System.Drawing.Point(651, 48);
+            votoBranco.Margin = new Padding(2, 0, 2, 0);
+            votoBranco.Name = "votoBranco";
+            votoBranco.Size = new System.Drawing.Size(38, 15);
+            votoBranco.TabIndex = 58;
+            votoBranco.Text = "label1";
+            // 
+            // votosBrancos
+            // 
+            votosBrancos.AutoSize = true;
+            votosBrancos.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            votosBrancos.Location = new System.Drawing.Point(535, 136);
+            votosBrancos.Margin = new Padding(2, 0, 2, 0);
+            votosBrancos.Name = "votosBrancos";
+            votosBrancos.Size = new System.Drawing.Size(86, 40);
+            votosBrancos.TabIndex = 57;
+            votosBrancos.Text = "Nulo";
+            // 
+            // votosNulos
+            // 
+            votosNulos.AutoSize = true;
+            votosNulos.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            votosNulos.Location = new System.Drawing.Point(535, 31);
+            votosNulos.Margin = new Padding(2, 0, 2, 0);
+            votosNulos.Name = "votosNulos";
+            votosNulos.Size = new System.Drawing.Size(125, 40);
+            votosNulos.TabIndex = 56;
+            votosNulos.Text = "Branco";
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new System.Drawing.Point(191, 118);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new System.Drawing.Size(284, 20);
+            progressBar1.TabIndex = 50;
+            // 
+            // porcentagem5
+            // 
+            porcentagem5.AutoSize = true;
+            porcentagem5.Location = new System.Drawing.Point(191, 684);
+            porcentagem5.Margin = new Padding(2, 0, 2, 0);
+            porcentagem5.Name = "porcentagem5";
+            porcentagem5.Size = new System.Drawing.Size(44, 15);
+            porcentagem5.TabIndex = 55;
+            porcentagem5.Text = "label12";
+            // 
+            // resultadosFotos1
+            // 
+            resultadosFotos1.Location = new System.Drawing.Point(38, 40);
+            resultadosFotos1.Name = "resultadosFotos1";
+            resultadosFotos1.Size = new System.Drawing.Size(104, 116);
+            resultadosFotos1.SizeMode = PictureBoxSizeMode.StretchImage;
+            resultadosFotos1.TabIndex = 42;
+            resultadosFotos1.TabStop = false;
+            // 
+            // nome1
+            // 
+            nome1.AutoSize = true;
+            nome1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            nome1.Location = new System.Drawing.Point(191, 31);
+            nome1.Margin = new Padding(2, 0, 2, 0);
+            nome1.Name = "nome1";
+            nome1.Size = new System.Drawing.Size(124, 40);
+            nome1.TabIndex = 33;
+            nome1.Text = "label24";
+            // 
+            // progressBar2
+            // 
+            progressBar2.Location = new System.Drawing.Point(191, 248);
+            progressBar2.Name = "progressBar2";
+            progressBar2.Size = new System.Drawing.Size(284, 20);
+            progressBar2.TabIndex = 54;
+            // 
+            // porcentagem1
+            // 
+            porcentagem1.AutoSize = true;
+            porcentagem1.Location = new System.Drawing.Point(191, 100);
+            porcentagem1.Margin = new Padding(2, 0, 2, 0);
+            porcentagem1.Name = "porcentagem1";
+            porcentagem1.Size = new System.Drawing.Size(38, 15);
+            porcentagem1.TabIndex = 25;
+            porcentagem1.Text = "label5";
+            // 
+            // progressBar5
+            // 
+            progressBar5.Location = new System.Drawing.Point(191, 702);
+            progressBar5.Name = "progressBar5";
+            progressBar5.Size = new System.Drawing.Size(284, 20);
+            progressBar5.TabIndex = 53;
+            // 
+            // voto1
+            // 
+            voto1.AutoSize = true;
+            voto1.Location = new System.Drawing.Point(437, 48);
+            voto1.Margin = new Padding(2, 0, 2, 0);
+            voto1.Name = "voto1";
+            voto1.Size = new System.Drawing.Size(38, 15);
+            voto1.TabIndex = 22;
+            voto1.Text = "label1";
+            // 
+            // progressBar4
+            // 
+            progressBar4.Location = new System.Drawing.Point(191, 539);
+            progressBar4.Name = "progressBar4";
+            progressBar4.Size = new System.Drawing.Size(284, 20);
+            progressBar4.TabIndex = 52;
+            // 
+            // progressBar3
+            // 
+            progressBar3.Location = new System.Drawing.Point(191, 391);
+            progressBar3.Name = "progressBar3";
+            progressBar3.Size = new System.Drawing.Size(284, 20);
+            progressBar3.TabIndex = 51;
+            // 
+            // resultadosFotos2
+            // 
+            resultadosFotos2.Location = new System.Drawing.Point(38, 175);
+            resultadosFotos2.Name = "resultadosFotos2";
+            resultadosFotos2.Size = new System.Drawing.Size(104, 116);
+            resultadosFotos2.SizeMode = PictureBoxSizeMode.StretchImage;
+            resultadosFotos2.TabIndex = 49;
+            resultadosFotos2.TabStop = false;
+            // 
+            // resultadosFotos3
+            // 
+            resultadosFotos3.Location = new System.Drawing.Point(38, 318);
+            resultadosFotos3.Name = "resultadosFotos3";
+            resultadosFotos3.Size = new System.Drawing.Size(104, 116);
+            resultadosFotos3.SizeMode = PictureBoxSizeMode.StretchImage;
+            resultadosFotos3.TabIndex = 48;
+            resultadosFotos3.TabStop = false;
+            // 
+            // resultadosFotos4
+            // 
+            resultadosFotos4.Location = new System.Drawing.Point(38, 456);
+            resultadosFotos4.Name = "resultadosFotos4";
+            resultadosFotos4.Size = new System.Drawing.Size(104, 116);
+            resultadosFotos4.SizeMode = PictureBoxSizeMode.StretchImage;
+            resultadosFotos4.TabIndex = 47;
+            resultadosFotos4.TabStop = false;
+            // 
+            // resultadosFotos5
+            // 
+            resultadosFotos5.Location = new System.Drawing.Point(38, 613);
+            resultadosFotos5.Name = "resultadosFotos5";
+            resultadosFotos5.Size = new System.Drawing.Size(104, 116);
+            resultadosFotos5.SizeMode = PictureBoxSizeMode.StretchImage;
+            resultadosFotos5.TabIndex = 43;
+            resultadosFotos5.TabStop = false;
+            // 
+            // porcentagem2
+            // 
+            porcentagem2.AutoSize = true;
+            porcentagem2.Location = new System.Drawing.Point(191, 230);
+            porcentagem2.Name = "porcentagem2";
+            porcentagem2.Size = new System.Drawing.Size(44, 15);
+            porcentagem2.TabIndex = 41;
+            porcentagem2.Text = "label25";
+            // 
+            // porcentagem4
+            // 
+            porcentagem4.AutoSize = true;
+            porcentagem4.Location = new System.Drawing.Point(191, 521);
+            porcentagem4.Margin = new Padding(2, 0, 2, 0);
+            porcentagem4.Name = "porcentagem4";
+            porcentagem4.Size = new System.Drawing.Size(44, 15);
+            porcentagem4.TabIndex = 39;
+            porcentagem4.Text = "label12";
+            // 
+            // nome5
+            // 
+            nome5.AutoSize = true;
+            nome5.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            nome5.Location = new System.Drawing.Point(191, 613);
+            nome5.Margin = new Padding(2, 0, 2, 0);
+            nome5.Name = "nome5";
+            nome5.Size = new System.Drawing.Size(124, 40);
+            nome5.TabIndex = 38;
+            nome5.Text = "label15";
+            // 
+            // nome4
+            // 
+            nome4.AutoSize = true;
+            nome4.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            nome4.Location = new System.Drawing.Point(191, 456);
+            nome4.Margin = new Padding(2, 0, 2, 0);
+            nome4.Name = "nome4";
+            nome4.Size = new System.Drawing.Size(124, 40);
+            nome4.TabIndex = 37;
+            nome4.Text = "label20";
+            // 
+            // porcentagem3
+            // 
+            porcentagem3.AutoSize = true;
+            porcentagem3.Location = new System.Drawing.Point(191, 373);
+            porcentagem3.Margin = new Padding(2, 0, 2, 0);
+            porcentagem3.Name = "porcentagem3";
+            porcentagem3.Size = new System.Drawing.Size(44, 15);
+            porcentagem3.TabIndex = 36;
+            porcentagem3.Text = "label21";
+            // 
+            // nome3
+            // 
+            nome3.AutoSize = true;
+            nome3.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            nome3.Location = new System.Drawing.Point(191, 318);
+            nome3.Margin = new Padding(2, 0, 2, 0);
+            nome3.Name = "nome3";
+            nome3.Size = new System.Drawing.Size(124, 40);
+            nome3.TabIndex = 35;
+            nome3.Text = "label22";
+            // 
+            // nome2
+            // 
+            nome2.AutoSize = true;
+            nome2.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            nome2.Location = new System.Drawing.Point(191, 175);
+            nome2.Margin = new Padding(2, 0, 2, 0);
+            nome2.Name = "nome2";
+            nome2.Size = new System.Drawing.Size(124, 40);
+            nome2.TabIndex = 34;
+            nome2.Text = "label23";
             // 
             // panel4
             // 
@@ -746,23 +1045,25 @@ namespace Urna
             panel4.Controls.Add(textBoxUrl);
             panel4.Controls.Add(textBoxPartido);
             panel4.Controls.Add(textBoxNome);
+            panel4.Controls.Add(pictureBox1);
             panel4.Controls.Add(Salvar);
-            panel4.Controls.Add(button3);
             panel4.Controls.Add(button2);
             panel4.Controls.Add(button1);
-            panel4.Location = new System.Drawing.Point(994, 304);
+            panel4.Location = new System.Drawing.Point(1, 83);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(575, 312);
+            panel4.Size = new System.Drawing.Size(1004, 446);
             panel4.TabIndex = 75;
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new System.Drawing.Point(249, 41);
+            label18.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label18.Location = new System.Drawing.Point(398, 24);
             label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(62, 15);
+            label18.Size = new System.Drawing.Size(167, 39);
             label18.TabIndex = 12;
-            label18.Text = "Candidato";
+            label18.Text = "Candidatos";
+            label18.Click += label18_Click;
             // 
             // label17
             // 
@@ -775,9 +1076,9 @@ namespace Urna
             // 
             // textBoxNumero
             // 
-            textBoxNumero.Location = new System.Drawing.Point(176, 132);
+            textBoxNumero.Location = new System.Drawing.Point(176, 134);
             textBoxNumero.Name = "textBoxNumero";
-            textBoxNumero.Size = new System.Drawing.Size(221, 23);
+            textBoxNumero.Size = new System.Drawing.Size(259, 23);
             textBoxNumero.TabIndex = 10;
             // 
             // label14
@@ -792,7 +1093,7 @@ namespace Urna
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(114, 162);
+            label11.Location = new System.Drawing.Point(114, 166);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(22, 15);
             label11.TabIndex = 8;
@@ -809,57 +1110,48 @@ namespace Urna
             // 
             // textBoxUrl
             // 
-            textBoxUrl.Location = new System.Drawing.Point(176, 162);
+            textBoxUrl.Location = new System.Drawing.Point(176, 163);
             textBoxUrl.Name = "textBoxUrl";
-            textBoxUrl.Size = new System.Drawing.Size(221, 23);
+            textBoxUrl.Size = new System.Drawing.Size(259, 23);
             textBoxUrl.TabIndex = 6;
             // 
             // textBoxPartido
             // 
             textBoxPartido.Location = new System.Drawing.Point(176, 105);
             textBoxPartido.Name = "textBoxPartido";
-            textBoxPartido.Size = new System.Drawing.Size(221, 23);
+            textBoxPartido.Size = new System.Drawing.Size(259, 23);
             textBoxPartido.TabIndex = 5;
             // 
             // textBoxNome
             // 
             textBoxNome.Location = new System.Drawing.Point(176, 76);
             textBoxNome.Name = "textBoxNome";
-            textBoxNome.Size = new System.Drawing.Size(221, 23);
+            textBoxNome.Size = new System.Drawing.Size(259, 23);
             textBoxNome.TabIndex = 4;
             // 
             // Salvar
             // 
-            Salvar.Location = new System.Drawing.Point(359, 246);
+            Salvar.Location = new System.Drawing.Point(377, 222);
             Salvar.Name = "Salvar";
-            Salvar.Size = new System.Drawing.Size(135, 31);
+            Salvar.Size = new System.Drawing.Size(172, 47);
             Salvar.TabIndex = 3;
             Salvar.Text = "Salvar";
             Salvar.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            button3.Location = new System.Drawing.Point(176, 246);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(135, 31);
-            button3.TabIndex = 2;
-            button3.Text = "Criar";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            button2.Location = new System.Drawing.Point(513, 72);
+            button2.Location = new System.Drawing.Point(894, 58);
             button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(59, 141);
+            button2.Size = new System.Drawing.Size(73, 169);
             button2.TabIndex = 1;
             button2.Text = "->";
             button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new System.Drawing.Point(7, 72);
+            button1.Location = new System.Drawing.Point(0, 58);
             button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(59, 141);
+            button1.Size = new System.Drawing.Size(73, 169);
             button1.TabIndex = 0;
             button1.Text = "<-";
             button1.UseVisualStyleBackColor = true;
@@ -868,12 +1160,12 @@ namespace Urna
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1663, 718);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
+            ClientSize = new System.Drawing.Size(1012, 534);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label8);
+            Controls.Add(panel3);
+            Controls.Add(panel4);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
@@ -911,9 +1203,17 @@ namespace Urna
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)resultadosFotos5).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ResumeLayout(false);
@@ -921,13 +1221,10 @@ namespace Urna
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label voto5;
+        private System.Windows.Forms.Label voto4;
+        private System.Windows.Forms.Label voto3;
+        private System.Windows.Forms.Label voto2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox UrnaCorrige;
         private System.Windows.Forms.PictureBox UrnaN4;
@@ -975,7 +1272,6 @@ namespace Urna
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private Button button3;
         private Button button2;
         private Button button1;
         private TextBox textBoxPartido;
@@ -990,7 +1286,35 @@ namespace Urna
         private TextBox textBoxNumero;
         private Label label19;
         private Label LinhaUrna;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private PictureBox pictureBox1;
+        private Label porcentagem4;
+        private Label nome5;
+        private Label nome4;
+        private Label porcentagem3;
+        private Label nome3;
+        private Label nome2;
+        private Label porcentagem2;
+        private PictureBox resultadosFotos2;
+        private PictureBox resultadosFotos3;
+        private PictureBox resultadosFotos4;
+        private PictureBox resultadosFotos5;
+        private ProgressBar progressBar2;
+        private ProgressBar progressBar5;
+        private ProgressBar progressBar4;
+        private ProgressBar progressBar3;
+        private Label porcentagem5;
+        private Panel panel5;
+        private ProgressBar progressBar1;
+        private PictureBox resultadosFotos1;
+        private Label nome1;
+        private Label porcentagem1;
+        private Label voto1;
+        private Label votosBrancos;
+        private Label votosNulos;
+        private ProgressBar progressBar0;
+        private ProgressBar progressBar00;
+        private Label votoNulo;
+        private Label votoBranco;
     }
 }
 

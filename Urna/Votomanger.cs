@@ -31,14 +31,14 @@ namespace Urna
                     Numero = 0,
                     Nome = "Nulo",
                     Partido = "Zero",
-                    Imagem = "",
+                    Imagem = null,
                     QuantidadeVotos = 0
                 },
                 new Candidato {
                     Numero = -1,
                     Nome = "Branco",
                     Partido = "Branco",
-                    Imagem = "C:\\Users\\cleod\\Downloads\\Urna\\img\\Candidatos\\",
+                    Imagem = null,
                     QuantidadeVotos = 0 },
                 new Candidato {
                     Numero = 1,
@@ -100,7 +100,17 @@ namespace Urna
 
         public static Candidato GetCandidato(int numeroCandidato)
         {
-            return ListaCandidatos.FirstOrDefault(c => c.Numero == numeroCandidato);
+            int indiceDoCandidato = ListaCandidatos.FindIndex(c => c.Numero == numeroCandidato);
+            if (indiceDoCandidato != -1)
+            {
+                return ListaCandidatos.FirstOrDefault(c => c.Numero == numeroCandidato);
+            }
+            else
+            {
+                return ListaCandidatos[1];
+
+            }
+            
         }
         public static List<Candidato> GetCandidatos()
         {
@@ -115,16 +125,19 @@ namespace Urna
             }
             else
             {
-
-             
-               Console.WriteLine("Candidato não encontrado. Voto branco.");
                ListaCandidatos[1].QuantidadeVotos++;
              
             }
         }
-
-
-
+        public static int TodosVotos()
+        {
+            int totalVotos = 0;
+            foreach (Candidato candidato in ListaCandidatos)
+            {
+                totalVotos += candidato.QuantidadeVotos;
+            }
+            return totalVotos;
+        }
 
 
     }

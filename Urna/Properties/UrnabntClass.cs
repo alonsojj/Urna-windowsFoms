@@ -6,12 +6,15 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Reflection.Metadata.Ecma335;
+using System.Media;
 
 
 namespace Urna.Properties
 {
     public class UrnabntClass
     {
+        static SoundPlayer confirmar = new SoundPlayer("C:\\Users\\cleod\\Downloads\\Urna\\img\\Sound\\Confirmar.wav");
+        static SoundPlayer bnts = new SoundPlayer("C:\\Users\\cleod\\Downloads\\Urna\\img\\Sound\\botoes.wav");
         public static void InicializarBotoesDaUrna()
         {
             PictureBox[] Urnabnts = Form1.UserInterface.Urnabnts;
@@ -24,6 +27,12 @@ namespace Urna.Properties
                 Urnabnts[i].MouseUp += (sender, e) => ChangeImageOnMouseUp(localUrnabnt, UrnabntNumber);
                 Urnabnts[i].Click += (sender, e) => UrnaClick(temNumero(inputN), inputN, UrnabntNumber);
             }
+        }
+
+        private static bool temNumero(Label label)
+        {
+            string text = label.Text;
+            return Regex.IsMatch(text, @"\d+");
         }
 
         private static Image file(int numero, bool press)
@@ -41,40 +50,98 @@ namespace Urna.Properties
         {
             bnt.Image = file(numero, false);
         }
-
         public static void UrnaClick(bool temNumero, Label inputN, int numero)
         {
-            if (!temNumero && numero<11)
+            if (!temNumero && numero < 11)
             {
-                inputN.Text = Convert.ToString(numero); 
-                ResultsManager.urnaPainelShow(numero);
+                MostrarNumero(inputN, numero);
+            }
+            else if (numero == 12)
+            {
+                LimparInput(inputN);
+            }
+            else if (numero == 11)
+            {
+                ProcessarVoto(inputN);
+            }
+        }
 
-            }
-            if (numero == 12)
+        private static void MostrarNumero(Label inputN, int numero)
+        {
+            inputN.Text = Convert.ToString(numero);
+            ResultsManager.urnaPainelShow(numero);
+            bnts.Play();
+        }
+
+        private static void LimparInput(Label inputN)
+        {
+            inputN.Text = "";
+            ResultsManager.urnaPainelHide();
+            bnts.Play();
+        }
+
+        private static void ProcessarVoto(Label inputN)
+        {
+            int voto;
+            bool tentativa = Int32.TryParse(inputN.Text, out voto);
+            if (tentativa)
             {
-                inputN.Text = "";
-                ResultsManager.urnaPainelHide();
+                Candidatos.AdicionarVoto(voto);
+                ResultsManager.ResultsPage();
+                confirmar.Play();
+                MostrarFim();
+                Pergunta(inputN);
             }
-            if ( numero == 11)
+        }
+
+        private static void MostrarFim()
+        {
+            Label labelFim = new Label();
+            labelFim.Text = "FIM";
+            labelFim.Font = new Font("Arial", 36, FontStyle.Bold);
+            labelFim.TextAlign = ContentAlignment.MiddleCenter;
+            labelFim.Dock = DockStyle.Fill;
+            Form1.Panel.Controls.Add(labelFim);
+            OcultarItens(labelFim);
+        }
+
+        private static void OcultarItens(Label labelFim)
+        {
+            foreach (Control c in Form1.Panel.Controls)
             {
-                int voto;
-                bool tentativa;
-                tentativa = Int32.TryParse(inputN.Text, out voto);
-                if (tentativa) { 
-                    Candidatos.AdicionarVoto(voto);
-                    ResultsManager.ResultsPage();
+                if (c != labelFim)
+                {
+                    c.Visible = false;
                 }
             }
         }
 
-        private static bool temNumero(Label label)
+        private static void Pergunta(Label inputN)
         {
-            string text = label.Text;
-            return Regex.IsMatch(text, @"\d+");
+            DialogResult resposta = MessageBox.Show("Você quer votar novamente?", "Obrigado Pelo voto", MessageBoxButtons.YesNo);
+            if (resposta == DialogResult.Yes)
+            {
+                ReinicializarUrna(inputN);
+            }
         }
 
-
-
-
+        private static void ReinicializarUrna(Label inputN)
+        {
+            foreach (Control c in Form1.Panel.Controls)
+            {
+                if (c is Label && c.Text == "FIM")
+                {
+                    c.Visible = false;
+                }
+                else
+                {
+                    c.Visible = true;
+                }
+            }
+            inputN.Text = "";
+            ResultsManager.urnaPainelHide();
+        }
     }
+ 
 }
+

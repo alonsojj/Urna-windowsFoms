@@ -40,13 +40,15 @@ namespace Urna
             }
             ChangeCandidato();
         }
-            private static void ChangeCandidato()
+            public static void ChangeCandidato()
             {
 
                 textBoxs[0].Text = atual[IndexCandidato].Nome;
                 textBoxs[1].Text = atual[IndexCandidato].Numero.ToString();
                 textBoxs[2].Text = atual[IndexCandidato].Partido;
                 textBoxs[3].Text = atual[IndexCandidato].Imagem;
+                Form1.UserInterface.Graph[0].Image=ResultsManager.ImageShow(atual[IndexCandidato].Imagem);
+
 
             }
             private static void SaveChanges()
@@ -55,6 +57,7 @@ namespace Urna
                 atual[IndexCandidato].Numero = Convert.ToInt32(textBoxs[1].Text);
                 atual[IndexCandidato].Partido = textBoxs[2].Text;
                 atual[IndexCandidato].Imagem = textBoxs[3].Text;
+                ChangeCandidato();
             }
 
 
